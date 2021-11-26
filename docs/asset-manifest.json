@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/fluffy-palm-tree/static/css/main.b9664b86.chunk.css",
+    "main.js": "/fluffy-palm-tree/static/js/main.2c8795ed.chunk.js",
+    "main.js.map": "/fluffy-palm-tree/static/js/main.2c8795ed.chunk.js.map",
+    "runtime-main.js": "/fluffy-palm-tree/static/js/runtime-main.edb5f5de.js",
+    "runtime-main.js.map": "/fluffy-palm-tree/static/js/runtime-main.edb5f5de.js.map",
+    "static/js/2.80729c3e.chunk.js": "/fluffy-palm-tree/static/js/2.80729c3e.chunk.js",
+    "static/js/2.80729c3e.chunk.js.map": "/fluffy-palm-tree/static/js/2.80729c3e.chunk.js.map",
+    "static/js/3.a44a3853.chunk.js": "/fluffy-palm-tree/static/js/3.a44a3853.chunk.js",
+    "static/js/3.a44a3853.chunk.js.map": "/fluffy-palm-tree/static/js/3.a44a3853.chunk.js.map",
+    "index.html": "/fluffy-palm-tree/index.html",
+    "static/css/main.b9664b86.chunk.css.map": "/fluffy-palm-tree/static/css/main.b9664b86.chunk.css.map",
+    "static/js/2.80729c3e.chunk.js.LICENSE.txt": "/fluffy-palm-tree/static/js/2.80729c3e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.edb5f5de.js",
+    "static/js/2.80729c3e.chunk.js",
+    "static/css/main.b9664b86.chunk.css",
+    "static/js/main.2c8795ed.chunk.js"
+  ]
+}
