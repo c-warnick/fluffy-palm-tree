@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/ban-types */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import * as React from "react";
 import "./DynamsoftBarcodeScanner.css";
 import DBR from "../../utility/DBR/dbr";
@@ -6,7 +9,7 @@ export type BarcodeScannerProps = Omit<React.HTMLProps<HTMLVideoElement>, "ref">
   appendMessage: Function
 }
 const Scanner = ({ appendMessage } : BarcodeScannerProps) => {
-  const [destroyed, setDestroyed] = React.useState<Boolean>(false);
+  const [destroyed, setDestroyed] = React.useState<boolean>(false);
   const [scanner, setScanner] = React.useState<any>(null);
   const elRef = React.useRef<any>(null);
 
@@ -25,7 +28,7 @@ const Scanner = ({ appendMessage } : BarcodeScannerProps) => {
   const openScanner = async () => {
     elRef.current.appendChild(scanner.getUIElement());
     scanner.onFrameRead = (results: any) => {
-      for (let result of results) {
+      for (const result of results) {
         console.log(result.barcodeFormatString + ": " + result.barcodeText);
         appendMessage({ format: result.barcodeFormatString, text: result.barcodeText, type: "result" });
         if (result.barcodeText.indexOf("Attention(exceptionCode") !== -1) {
@@ -61,7 +64,7 @@ const Scanner = ({ appendMessage } : BarcodeScannerProps) => {
   return <div ref={elRef}></div>;
 };
 
-const BarcodeScanner = ({}) => {
+const BarcodeScanner = () => {
   const [libLoaded, setLibLoaded] = React.useState(false);
   const [resultValue, setResultValue] = React.useState("");
   const [showScanner, setShowScanner] = React.useState(false);

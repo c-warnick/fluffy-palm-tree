@@ -1,28 +1,12 @@
-import { Fragment, useState } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
-import packageInfo from '../package.json'; 
-
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import { useState } from 'react'
 
 import "./App.css";
 import ZxingBarcodeScanner from "./common/components/ZxingBarcodeScanner";
 import DynamsoftBarcodeScanner from "./common/components/DynamsoftBarcodeScanner";
 
 
-
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
-}
-
-
 function App() {
-  const [showScanner, setShowScanner] = useState<Boolean>(false);
+  const [showScanner, setShowScanner] = useState<boolean>(false);
   const switchScanner = () => {
     setShowScanner(!showScanner);
   }

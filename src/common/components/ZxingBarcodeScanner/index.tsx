@@ -1,18 +1,13 @@
 import * as React from "react";
 import './BarcodeScanner.css';
 import {BrowserMultiFormatOneDReader, BrowserCodeReader, IScannerControls} from '@zxing/browser';
-import { read } from "fs";
 
 export type BarcodeScannerProps = Omit<React.HTMLProps<HTMLVideoElement>, "ref"> & {
-  width?: Number,
-  height?: Number,
-  mirrored?: Boolean,
+  width?: number,
+  height?: number,
+  mirrored?: boolean,
 }
 
-interface WebcamState {
-  hasUserMedia: boolean;
-  src?: string;
-}
 
 const BarcodeScanner = ({
   style = {},
@@ -38,7 +33,7 @@ const BarcodeScanner = ({
       setResults("");
     }
     if(reader){
-      const readerControls = await reader.decodeFromVideoDevice( selectedDeviceId, previewEl.current?.id, ( result, error, controls) => {
+      const readerControls = await reader.decodeFromVideoDevice( selectedDeviceId, previewEl.current?.id, ( result) => {
         console.log( 'Scanning Results', result);
         if(result){
           setResults(result?.getBarcodeFormat() + ": " + result?.getText());
@@ -47,13 +42,6 @@ const BarcodeScanner = ({
       })
 
       setControls(readerControls);
-    }
-  }
-
-  const stopAndAlert = () => {
-    if(controls) {
-      controls.stop();
-      alert('We are having issues with scanning. Please reload or try entering barcode manually');
     }
   }
 
