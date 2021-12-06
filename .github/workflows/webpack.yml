@@ -31,6 +31,9 @@ jobs:
 
     - name: Push Build
       run: |
+        git config --global user.email "c-warnick@users.noreply.github.com"
+        git config --global user.name "Fluffy Palm"
+
         git add docs/**
         git commit -m "Build push"
         git push 
