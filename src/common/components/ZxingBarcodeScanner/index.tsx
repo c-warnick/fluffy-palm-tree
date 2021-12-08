@@ -16,7 +16,9 @@ const BarcodeScanner = ({
   mirrored
 } : BarcodeScannerProps) => {
   const [reader, setReader] = React.useState<BrowserMultiFormatOneDReader | null>();
+  const [started, setStarted] = React.useState<boolean | null>(false);
   const [videoInputDevices, setVideoInputDevices] = React.useState<MediaDeviceInfo[] | null>();
+  const [currentDevice, setCurrentDevice] = React.useState<number>(0);
   const [selectedDeviceId, setSelectedDeviceId] = React.useState<string | undefined>();
   const [controls, setControls]  = React.useState<IScannerControls | null>(null);
   const [results, setResults] = React.useState<string>("");
@@ -40,8 +42,18 @@ const BarcodeScanner = ({
           readerControls.stop();
         }
       })
+      if(readerControls){
+        setStarted(true)
+        setControls(readerControls);
+      }
+    }
+  }
 
-      setControls(readerControls);
+  const switchCamera = async () => {
+    if(videoInputDevices) {
+      const deviceNumber = currentDevice || 0;
+      const newDeviceNumber = deviceNumber === videoInputDevices.length + 1 ? 0 : deviceNumber + 1
+      setCurrentDevice(newDeviceNumber);
     }
   }
 
@@ -72,6 +84,14 @@ const BarcodeScanner = ({
     }
     
   }, [videoInputDevices]);
+  
+  React.useEffect(() => {
+    if(controls && started && videoInputDevices) {
+      controls.stop();
+      setSelectedDeviceId(videoInputDevices[currentDevice].deviceId);
+    }
+    
+  }, [currentDevice]);
 
   // React.useEffect(() => {
   //   if(controls) {
@@ -81,6 +101,7 @@ const BarcodeScanner = ({
   const videoStyle = mirrored ? { ...style, transform: `${style.transform || ""} scaleX(-1)` } : style;
   return (
     <div id='videoview'>
+      {!!(videoInputDevices && videoInputDevices?.length > 1) && <button onClick={switchCamera}>Switch Camera</button>}
         <video
             id="video"
             ref={previewEl}
