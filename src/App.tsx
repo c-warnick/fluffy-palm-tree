@@ -1,24 +1,26 @@
 import { useState } from 'react'
 
 import "./App.css";
-import ZxingBarcodeScanner from "./common/components/ZxingBarcodeScanner";
-import DynamsoftBarcodeScanner from "./common/components/DynamsoftBarcodeScanner";
-
+import {ZxingBarcodeScanner,  DynamsoftBarcodeScanner, QuaggaBarcodeScanner  } from './common/components';
+const scanners = [  'zxing', 'dynamsoft', 'quagga'];
 
 function App() {
-  const [showScanner, setShowScanner] = useState<boolean>(false);
-  const switchScanner = () => {
-    setShowScanner(!showScanner);
+  const [showScanner, setShowScanner] = useState<string>(scanners[0]);
+  const switchScanner = (index: number) => {
+    setShowScanner(scanners[index]);
   }
   return (
 
       <div className="container mx-auto">
         <div style={{minHeight: '200px'}}>
-          {!showScanner && <ZxingBarcodeScanner width={300} height={200} />}
-          {showScanner && <DynamsoftBarcodeScanner />}    
+          {showScanner === scanners[0] && <ZxingBarcodeScanner width={300} height={200} />}
+          {showScanner === scanners[1] && <DynamsoftBarcodeScanner />}  
+          {showScanner === scanners[2] && <QuaggaBarcodeScanner />}   
         </div>
-        <div style={{position:'relative', textAlign: 'center'}}>
-          <button onClick={switchScanner}>Switch reader</button>
+        <div className="control bottom">
+          {scanners.map((item,index) => {
+            return (<button style={{marginRight: '15px'}} key={item + index} onClick={() => switchScanner(index)}>Switch to {item}</button>)
+          })}
         </div>   
       </div>
   );

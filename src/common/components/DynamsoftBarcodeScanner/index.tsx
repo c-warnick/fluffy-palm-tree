@@ -98,11 +98,14 @@ const BarcodeScanner = () => {
 
   return (
     <div className="helloWorld">
+      <div className="control">
+        {resultValue}
+      </div>
       <div id="UIElement">
         {!libLoaded && (<span>Loading Library...</span>)}
         {showScanner && (<Scanner appendMessage={appendMessage}></Scanner>)}
       </div>
-      <input type="text" value={resultValue} readOnly={true} id="resultText" />
+      
     </div>
   );
 };
