@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/fluffy-palm-tree/static/css/main.9646ff66.chunk.css",
-    "main.js": "/fluffy-palm-tree/static/js/main.fc32dd7b.chunk.js",
-    "main.js.map": "/fluffy-palm-tree/static/js/main.fc32dd7b.chunk.js.map",
-    "runtime-main.js": "/fluffy-palm-tree/static/js/runtime-main.982526da.js",
-    "runtime-main.js.map": "/fluffy-palm-tree/static/js/runtime-main.982526da.js.map",
-    "static/js/2.7d2fe4aa.chunk.js": "/fluffy-palm-tree/static/js/2.7d2fe4aa.chunk.js",
-    "static/js/2.7d2fe4aa.chunk.js.map": "/fluffy-palm-tree/static/js/2.7d2fe4aa.chunk.js.map",
-    "static/js/3.c670fec3.chunk.js": "/fluffy-palm-tree/static/js/3.c670fec3.chunk.js",
-    "static/js/3.c670fec3.chunk.js.map": "/fluffy-palm-tree/static/js/3.c670fec3.chunk.js.map",
+    "main.css": "/fluffy-palm-tree/static/css/main.4cf6a9ff.chunk.css",
+    "main.js": "/fluffy-palm-tree/static/js/main.597adc16.chunk.js",
+    "main.js.map": "/fluffy-palm-tree/static/js/main.597adc16.chunk.js.map",
+    "runtime-main.js": "/fluffy-palm-tree/static/js/runtime-main.684e9d68.js",
+    "runtime-main.js.map": "/fluffy-palm-tree/static/js/runtime-main.684e9d68.js.map",
+    "static/js/2.2f280eb4.chunk.js": "/fluffy-palm-tree/static/js/2.2f280eb4.chunk.js",
+    "static/js/2.2f280eb4.chunk.js.map": "/fluffy-palm-tree/static/js/2.2f280eb4.chunk.js.map",
+    "static/js/3.e62bf40b.chunk.js": "/fluffy-palm-tree/static/js/3.e62bf40b.chunk.js",
+    "static/js/3.e62bf40b.chunk.js.map": "/fluffy-palm-tree/static/js/3.e62bf40b.chunk.js.map",
     "index.html": "/fluffy-palm-tree/index.html",
-    "static/css/main.9646ff66.chunk.css.map": "/fluffy-palm-tree/static/css/main.9646ff66.chunk.css.map",
-    "static/js/2.7d2fe4aa.chunk.js.LICENSE.txt": "/fluffy-palm-tree/static/js/2.7d2fe4aa.chunk.js.LICENSE.txt"
+    "static/css/main.4cf6a9ff.chunk.css.map": "/fluffy-palm-tree/static/css/main.4cf6a9ff.chunk.css.map",
+    "static/js/2.2f280eb4.chunk.js.LICENSE.txt": "/fluffy-palm-tree/static/js/2.2f280eb4.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.982526da.js",
-    "static/js/2.7d2fe4aa.chunk.js",
-    "static/css/main.9646ff66.chunk.css",
-    "static/js/main.fc32dd7b.chunk.js"
+    "static/js/runtime-main.684e9d68.js",
+    "static/js/2.2f280eb4.chunk.js",
+    "static/css/main.4cf6a9ff.chunk.css",
+    "static/js/main.597adc16.chunk.js"
   ]
 }
