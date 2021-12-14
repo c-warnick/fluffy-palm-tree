@@ -64,7 +64,7 @@ const Scanner = ({ onDetected }) => {
     Quagga.onDetected(detected);
   }, []);
 
-  const detected = (result: { codeResult: { code: any; }; }) => {
+  const detected = (result: { codeResult: { code: unknown; }; }) => {
     onDetected(result.codeResult.code);
   };
 
